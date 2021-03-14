@@ -1,5 +1,11 @@
+@font-face {
+	font-family: "Vazir";
+	src: url("fonts/Vazir/Vazir.woff") format("woff");
+}
+
 body {
   padding-top: 5rem;
+  font-family: "Vazir";
 }
 
 .top_section_bg {

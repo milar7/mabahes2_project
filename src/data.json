@@ -5,64 +5,61 @@
             "title": "Awesome Product 1",
             "image": "https://cdn.dribbble.com/users/2564256/screenshots/15244258/media/324908e40f50ca98946aefeca70c6cfd.png?compress=1&resize=1200x900",
             "description": "lurmdasdsadasdasd",
-            "tags":["web","mobile"],
-            "createdAt":"Nov 13",
-            "owner":{"id":"1","name":"Aliho","avatar":"https://picsum.photos/id/4/45/45 "}
+            "tags": ["web", "mobile"],
+            "createdAt": "Nov 13",
+            "user": { "id": "1", "name": "Aliho", "avatar": "https://picsum.photos/id/4/45/45 " }
         },
         {
             "id": "2",
             "title": "Awesome Product 2",
             "image": "https://cdn.dribbble.com/users/2564256/screenshots/15244258/media/324908e40f50ca98946aefeca70c6cfd.png?compress=1&resize=1200x900",
             "description": "lurmdasdsadasdasd",
-            "tags":["web","design"],
-            "createdAt":"Nov 21",
+            "tags": ["web", "design"],
+            "createdAt": "Nov 21",
 
-            "owner":{"id":"1","name":"Aliho","avatar":"https://picsum.photos/id/4/45/45 "}
+            "user": { "id": "1", "name": "Aliho", "avatar": "https://picsum.photos/id/4/45/45 " }
         },
         {
             "id": "3",
             "title": "Awesome Product 3",
             "image": "https://cdn.dribbble.com/users/2564256/screenshots/15244258/media/324908e40f50ca98946aefeca70c6cfd.png?compress=1&resize=1200x900",
             "description": "lurmdasdsadasdasd",
-            "tags":["web","mobile"],
-            "createdAt":"Des 12",
+            "tags": ["web", "mobile"],
+            "createdAt": "Des 12",
 
-            "owner":{"id":"2","name":"Milar","avatar":"https://picsum.photos/id/4/45/45 "}
+            "user": { "id": "2", "name": "Milar", "avatar": "https://picsum.photos/id/4/45/45 " }
         },
         {
             "id": "4",
             "title": "Awesome Product 4",
             "image": "https://cdn.dribbble.com/users/2564256/screenshots/15244258/media/324908e40f50ca98946aefeca70c6cfd.png?compress=1&resize=1200x900",
             "description": "lurmdasdsadasdasd",
-            "tags":["web","design"],
-            "createdAt":"Jun 19",
+            "tags": ["web", "design"],
+            "createdAt": "Jun 19",
 
-            "owner":{"id":"2","name":"Milar","avatar":"https://picsum.photos/id/4/45/45 "}
+            "user": { "id": "2", "name": "Milar", "avatar": "https://picsum.photos/id/4/45/45 " }
         }
     ],
-    "Users":[
+    "Users": [
         {
             "id": "1",
-            "fullName": "ali hodavand",
-            "userName":"Aliho",
-            "password":"aliho1",
-            "bio":"asdasdasdasd",
-            "email":"aliho@gmail.com",
-            "avatar":"https://picsum.photos/id/4/45/45 ",
-            "avatar_big":"https://picsum.photos/id/4/1200/900 ",
-            "description": "lurmdasdsadasdasd"
-         },
-         {
+            "name": "ali hodavand",
+            "username": "Aliho",
+            "password": "aliho1",
+            "description": "asdasdasdasd",
+            "email": "aliho@gmail.com",
+            "avatar": "https://picsum.photos/id/4/45/45 ",
+            "avatar_big": "https://picsum.photos/id/4/1200/900 "
+        },
+        {
             "id": "2",
-            "fullName": "milad nafar",
-            "userName":"Milar",
-            "password":"milar1",
-            "bio":"asdasdasdasd",
-            "email":"milar@gmail.com",
-
-            "avatar":"https://picsum.photos/id/1/45/45 ",
-            "avatar_big":"https://picsum.photos/id/1/1200/900 ",
-            "description": "lurmdasdsadasdasd"
-         }
+            "name": "milad nafar",
+            "username": "Milar",
+            "password": "milar1",
+            "description": "asdasdasdasd",
+            "email": "milar@gmail.com",
+            "avatar": "https://picsum.photos/id/1/45/45 ",
+            "avatar_big": "https://picsum.photos/id/1/1200/900 "
+        }
     ]
 }

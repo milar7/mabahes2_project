@@ -1,15 +1,18 @@
-import { Row, Col, Container } from "react-bootstrap";
+import ProductItem from "./product_item";
 
-const ProductList = ({ auth, setAuth, activePage, setactivePage }) => {
+ 
+const ProductList = ({ products ,mine}) => {
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col sm>sm=true</Col>
-          <Col sm>sm=true</Col>
-          <Col sm>sm=true</Col>
-        </Row>
-      </Container>
+    <div className="container">
+        <div className="row">
+        {
+            products.map((product) => (
+                <ProductItem key={Math.random()} product={product} mine={mine}/>
+            ))
+        }
+
+        </div>
+      
     </div>
   );
 };

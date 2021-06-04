@@ -6,6 +6,11 @@ import Home from "./pages/home/home";
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
 import NavbarComp from "./component/navbar";
+import ProductDetail from "./pages/home/productDetail/product_detail";
+import Profile from "./pages/profile/profile";
+import UserDetail from "./pages/userDetail/user_detail";
+import NewProduct from "./pages/newProduct/newProduct";
+
 
 function App() {
   const [auth, setAuth] = useLocalStorage("auth", "logOut");
@@ -72,7 +77,38 @@ function App() {
               <Login {...props} auth={auth} setAuth={setAuth}  activePage={activePage} setactivePage={setactivePage} />
             )}
           />
+          <Route
+            path="/profile"
+            render={(props) => (
+              <Profile {...props} auth={auth} setAuth={setAuth}  activePage={activePage} setactivePage={setactivePage} />
+            )}
+          />
+           <Route
+            path="/products/:id"
+            render={(props) => (
+              <ProductDetail {...props} auth={auth} setAuth={setAuth}  activePage={activePage} setactivePage={setactivePage} />
+            )}
+          />
+             <Route
+            path="/users/:id"
+            render={(props) => (
+              <UserDetail {...props} auth={auth} setAuth={setAuth}  activePage={activePage} setactivePage={setactivePage} />
+            )}
+          />
+           <Route
+            path="/products"
+            render={(props) => (
+              <Home {...props} auth={auth} setAuth={setAuth}  activePage={activePage} setactivePage={setactivePage} />
+            )}
+          />
+         <Route
+            path="/newproduct/:id"
+            render={(props) => (
+              <NewProduct {...props} auth={auth} setAuth={setAuth}  activePage={activePage} setactivePage={setactivePage} />
+            )}
+          />
         </Switch>
+      
       </div>
     </Router>
   );

@@ -2,21 +2,26 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useState, useEffect } from "react";
-import data from "../../data.json";
+import data from "../../../data.json";
 
-function NewProduct({ auth, setAuth, activePage, setActivePage }) {
+function EditProduct({ match,auth, setAuth, activePage, setActivePage }) {
+    const [product, setProduct] = useState({ user: {} });
   const [user, setUser] = useState({});
   const [title, settitle] = useState("");
   const [description, setdescription] = useState("");
 
   useEffect(() => {
-    setActivePage("NewProduct");
-    fetchUser();
+    setActivePage("EditProduct");
+    fetchData();
   }, []);
 
-  function fetchUser() {
+  function fetchData() {
     var user = data.Users.filter((user) => user.id === auth)[0];
+    var product = data.Products.filter((product) => product.id === match.params.id)[0];
+    setProduct(product);
     setUser(user);
+    settitle(product.title)
+    setdescription(product.description)
   }
   function hanndleSummit() {}
 
@@ -26,7 +31,7 @@ function NewProduct({ auth, setAuth, activePage, setActivePage }) {
         <div className="col-md-6">
           <img
             src={
-              "http://rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png"
+              product.image
             }
             className="img-fluid rounded"
             alt="not found image"
@@ -34,10 +39,10 @@ function NewProduct({ auth, setAuth, activePage, setActivePage }) {
         </div>
         <div className="card col-md-6">
           <form>
-            <label className="mt-2" style={{ width: "100%" }}>
-              Title
+            <div className="mt-2">
+              <label htmlFor="title">Title</label>
               <input
-                className="form-control mt-2"
+                className="form-control"
                 value={title}
                 onChange={(e) => settitle(e.target.value)}
                 placeholder="title"
@@ -45,10 +50,9 @@ function NewProduct({ auth, setAuth, activePage, setActivePage }) {
                 name="title"
                 required
               />
-            </label>
-
-            <label className="mt-2" style={{ width: "100%" }}>
-              Description
+            </div>
+            <div className="mt-2">
+              <label htmlFor="description">Description</label>
               <textarea
                 className="form-control"
                 value={description}
@@ -60,7 +64,8 @@ function NewProduct({ auth, setAuth, activePage, setActivePage }) {
                 rows="3"
                 style={{ width: "100%" }}
               />
-            </label>
+            </div>
+
             <button
               className="btn btn-info  mt-3 btn-lg"
               style={{ width: "100%" }}
@@ -74,4 +79,4 @@ function NewProduct({ auth, setAuth, activePage, setActivePage }) {
     </div>
   );
 }
-export default NewProduct;
+export default EditProduct;

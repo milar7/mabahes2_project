@@ -10,6 +10,8 @@ import ProductDetail from "./pages/home/productDetail/product_detail";
 import Profile from "./pages/profile/profile";
 import UserDetail from "./pages/userDetail/user_detail";
 import NewProduct from "./pages/newProduct/newProduct";
+import GuardedRoute from "./pages/profile/guardProfile";
+import EditProduct from "./pages/home/productDetail/editProduct";
 
 function App() {
     const [auth, setAuth] = useLocalStorage("auth", "logOut");
@@ -101,8 +103,9 @@ function App() {
                     <Route
                         path="/profile"
                         render={(props) => (
-                            <Profile
+                            <GuardedRoute
                                 {...props}
+                                component={Profile}
                                 auth={auth}
                                 setAuth={setAuth}
                                 activePage={activePage}
@@ -114,6 +117,18 @@ function App() {
                         path="/products/:id"
                         render={(props) => (
                             <ProductDetail
+                                {...props}
+                                auth={auth}
+                                setAuth={setAuth}
+                                activePage={activePage}
+                                setActivePage={setActivePage}
+                            />
+                        )}
+                    />
+                       <Route
+                        path="/edit-product/:id"
+                        render={(props) => (
+                            <EditProduct
                                 {...props}
                                 auth={auth}
                                 setAuth={setAuth}
@@ -147,7 +162,7 @@ function App() {
                         )}
                     />
                     <Route
-                        path="/new-product/:id"
+                        path="/new-product"
                         render={(props) => (
                             <NewProduct
                                 {...props}

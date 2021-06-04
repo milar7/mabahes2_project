@@ -99,7 +99,10 @@ body {
   box-shadow: 0 8px 16px 0 rgba(188, 7, 243, 0.219);
   border-bottom-left-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
+
 
 footer {
   padding-top: 3rem;

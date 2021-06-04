@@ -12,10 +12,11 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
     const [products, setProducts] = useState([]);
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
+    const [description, setdescription] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const history = useHistory();
+        const history = useHistory();
 
     useEffect(() => {
         setActivePage("profile");
@@ -31,9 +32,10 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
 
         setUser(myUser);
         setProducts(products);
-        setName(myUser.fullName);
-        setUsername(myUser.userName);
+        setName(myUser.name);
+        setUsername(myUser.username);
         setEmail(myUser.email);
+        setdescription(myUser.description)
         setPassword(myUser.password);
     }
 
@@ -47,8 +49,9 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
                         alt="not found image"
                     />
                 </div>
-                <div className="col-md-6">
+                <div className="card col-md-6">
                     <form>
+                             <label className="mt-2" style={{ width: "100%" }}>Full Name 
                         <input
                             className="form-control"
                             value={name}
@@ -58,6 +61,9 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
                             name="fullName"
                             required
                         />
+                         </label>
+                         <div className="mt-2">
+                            <label htmlFor="userName">User Name</label>
                         <input
                             className="form-control"
                             value={username}
@@ -67,6 +73,9 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
                             name="userName"
                             required
                         />
+                        </div>
+                        <div className="mt-2">
+                            <label htmlFor="email">Email</label>
                         <input
                             className="form-control"
                             value={email}
@@ -76,6 +85,19 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
                             name="email"
                             required
                         />
+                        </div>
+                        <div className="mt-2">
+                            <label htmlFor="description">Description</label>
+                          <textarea  className="form-control"
+                            value={description}
+                            onChange={(e) => setdescription(e.target.value)}
+                            placeholder="description"
+                            type="textara"
+                            name="description"
+                            required  rows="5" style={{width:"100%"}}/>
+                            </div>
+                        <div className="mt-2">
+                            <label htmlFor="password">Password</label>
                         <input
                             className="form-control"
                             value={password}
@@ -86,15 +108,21 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
                             autoComplete="on"
                             required
                         />
+                        </div>
+
+                        
+                    
+
 
                         <button
-                            className="btn btn-primary  mt-3 btn-lg"
+                            className="btn btn-primary  mt-3 mb-3 btn-lg"
                             style={{ width: "100%" }}
                             onClick={() => submitHandler()}
                         >
                             Apply
                         </button>
                     </form>
+                    
                 </div>
             </div>
             <div className="row mb-3 mt-4 justify-content-center">
@@ -107,9 +135,9 @@ function Profile({ auth, setAuth, activePage, setActivePage }) {
                     <button
                         type="button"
                         onClick={() => {
-                            history.push(`new-product/${user.id}`);
+                            history.push(`new-product`);
                         }}
-                        class="mt-3 btn btn-info"
+                        className="mt-3  btn btn-info"
                     >
                         + Add New Product
                     </button>

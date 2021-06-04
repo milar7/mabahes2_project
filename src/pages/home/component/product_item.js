@@ -27,7 +27,7 @@ const ProductItem = ({ product, mine }) => {
                                 <p style={{ margin: "10px" }}>{product.user.name}</p>
                             </div>
                         ) : (
-                            <Link to="#">Edit</Link>
+                            <Link to={`/edit-product/${product.id}`}>Edit</Link>
                         )}
                     </Link>
 
